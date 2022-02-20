@@ -84,25 +84,73 @@ public class Main {
         System.out.println(Arrays.toString(massive));
 
     }
+    //Задачи повышенной сложности
+
+    //Методы к Задаче 6
+    public static double sumOfMassiveElements(int[] arr) {
+        //Вычисляет сумму элементов массива
+        double sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+
+    public static double monthArithmeticMean(double sum) {
+        //Вычисляет среднюю арифметическую трату за 30 дней
+        double arithmeticMean = sum / 30;
+
+        return arithmeticMean;
+    }
 
 
     public static void main(String[] args) {
         // write your code here
         //Задача 1 вызов метода
+        System.out.println("Задача 1");
         testLeapYear(2022);
+        System.out.println();
 
         //Задача 2 вызов метода
+        System.out.println("Задача 2");
         offerOsVersion(1, 2022);
+        System.out.println();
 
         //Задача 3 вызов метода
+        System.out.println("Задача 3");
         String s = "Потребуется дней: " + calculateNumberOfDays(95);
         System.out.println(s);
+        System.out.println();
 
         //Задача 4 вызов метода
+        System.out.println("Задача 4");
         testFirstDuplicate("abc");
+        System.out.println();
 
         //Задача 5 вызов метода
+        System.out.println("Задача 5");
         int[] m1 = {3, 2, 1, 6, 5};
         invertMassive(m1);
+        System.out.println();
+
+        //Задачи повышенной сложности
+        System.out.println("Задачи повышенной сложности");
+        System.out.println();
+
+        //Задача 6 вызовы методов
+        System.out.println("Задача 6");
+        int[] arr = generateRandomArray();
+        double am = monthArithmeticMean(sumOfMassiveElements(arr));
+        System.out.println("Средняя сумма трат за месяц составила " + am + " рублей.");
+
+    }
+
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
     }
 }
